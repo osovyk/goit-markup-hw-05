@@ -1,0 +1,403 @@
+:root {
+    scroll-behavior: smooth;
+
+    /* Fonts */
+    --primary-font: "Roboto";
+    --second-family: "Raleway";
+
+    /* Colors */
+    --iris: rgb(77, 90, 229); /* #4d5ae5 */
+    --ocean: rgb(64, 75, 191); /* #404bbf */
+    --green: rgb(49, 208, 170); /* #31d0aa */
+    --slate: rgb(67, 68, 85); /* #434455 */
+    --light-slate: rgb(142, 143, 153); /* #8e8f99 */
+    --cornflower: rgb(231, 233, 252); /* #e7e9fc */
+    --cloud: rgb(244, 244, 253); /* #f4f4fd */
+    --grey: rgb(46, 47, 66); /* #2E2F42B2 */
+    --white: rgb(255, 255, 255); /* #fff */
+    --dairy: rgb(252, 252, 252); /* #fcfcfc */
+
+    /* Flex  */
+    --items: 4;
+    --col-gap: 24px;
+    --row-gap: var(--col-gap);
+}
+
+/* Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+ul, ol, li, dl, dt, dd, p, a {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+button {
+    all: unset;
+    font-family: inherit;
+    cursor: pointer;
+}
+
+address {
+    font-style: normal;
+}
+
+img {
+    display: block;
+}
+
+/* Common */
+body {
+    font-family: var(--primary-font), sans-serif;
+    background-color: var(--white);
+    color: var(--slate);
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+}
+
+.container {
+    width: 1158px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section {
+    padding: 120px 0;
+}
+
+.section-title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.11;
+    color: var(--grey);
+    letter-spacing: 0.02em;
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: 72px;
+}
+
+.approach-title, .team-name, .portfolio-subtitle {
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--grey);
+    margin-bottom: 8px;
+}
+
+.team-list, .approach-list, .portfolio-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--col-gap);
+    row-gap: var(--row-gap);
+}
+
+.flex-item {
+    flex-basis: calc((100% - (var(--items) - 1) * var(--col-gap)) / var(--items));
+    overflow: hidden;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.social-media-list {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.social-media-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px transparent;
+    background-color: var(--iris);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.social-media-link:hover, .social-media-link:focus {
+    background-color: var(--ocean);
+}
+
+.social-icon {
+    fill: var(--cloud);
+}
+
+/* HEADER */
+.header {
+    border-bottom: 1px solid var(--cornflower);
+    box-shadow: 0 2px 1px rgba(46, 47, 66, 0.08), 0 1px 1px rgba(46, 47, 66, 0.16), 0 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: var(--second-family), sans-serif;
+    color: var(--iris);
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+}
+
+.header-logo {
+    margin-right: 76px;
+}
+
+.dark-logo {
+    color: var(--grey);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-link {
+    color: var(--grey);
+    font-weight: 500;
+    padding: 24px 0;
+    position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active,
+.contact-link:hover,
+.contact-link:focus {
+    color: var(--ocean);
+}
+
+.active {
+    color: var(--ocean);
+}
+
+.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: currentColor;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+}
+
+.contact-list {
+    display: flex;
+    gap: 40px;
+    padding: 24px 0;
+}
+
+.contact-link {
+    color: var(--slate);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* HERO */
+.hero {
+    padding: 188px 0;
+    background-color: rgba(46, 47, 66, 70%);
+    background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url("./../images/hero-background-image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.hero-title {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1.07;
+    letter-spacing: 0.02em;
+    color: var(--white);
+    max-width: 496px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.hero-btn {
+    text-align: center;
+    background-color: var(--iris);
+    line-height: 1.5;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    border-radius: 4px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    display: block;
+    min-width: 169px;
+    height: 56px;
+    margin: 0 auto;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-btn:hover, .hero-btn:focus {
+    background-color: var(--ocean);
+}
+/*APPROACH*/
+.approach-image-box {
+    height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cloud);
+    border-radius: 4px;
+    border: 1px solid var(--light-slate);
+    margin-bottom: 8px;
+}
+
+/* OUR TEAM */
+.team {
+    background-color: var(--cloud);
+}
+
+.team-member {
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+
+.team-role {
+    margin-bottom: 8px;
+}
+
+.team-member-content {
+    background-color: var(--white);
+    text-align: center;
+    padding: 32px 0;
+}
+
+/* Portfolio */
+.portfolio-list {
+    --items: 3;
+    row-gap: calc(var(--col-gap) * 2);
+}
+
+.portfolio-item {
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover {
+    box-shadow: 0 1px 6px rgba(46, 47, 66, 0.08), 0 1px 1px rgba(46, 47, 66, 0.16), 0 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0%);
+}
+
+.portfolio-thumbnail {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    color: var(--cloud);
+    padding: 40px 32px;
+    background-color: var(--iris);
+    height: 100%;
+    width: 100%;
+    transform: translateY(100%);
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-content {
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--cornflower);
+    padding: 32px 16px;
+    border-top: none;
+}
+
+.portfolio-subtitle {
+    margin-bottom: 8px;
+}
+
+/* Footer */
+.footer {
+    padding: 100px 0;
+    min-height: 312px;
+    background-color: var(--grey);
+}
+
+.footer .container {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer-site-info {
+    max-width: 264px;
+    margin-right: 120px;
+}
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.light-logo, .footer-text {
+    color: var(--cloud);
+}
+
+.footer-section-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 16px;
+}
+
+.footer-social-media-list {
+    gap: 16px;
+}
+
+.footer-social-media-link:hover, .footer-social-media-link:focus {
+    background-color: var(--green);
+}
+
