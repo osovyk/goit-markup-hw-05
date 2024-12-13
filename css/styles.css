@@ -154,7 +154,8 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color var(--main-tran);
+    transition: var(--main-tran);
+    transition-property: background-color;
 }
 
 .social-media-link:hover, .social-media-link:focus {
@@ -174,7 +175,8 @@ textarea {
     letter-spacing: 0.04em;
     color: rgb(var(--white));
     border-radius: 4px;
-    transition: background-color var(--main-tran);
+    transition: var(--main-tran);
+    transition-property: background-color;
 }
 
 .btn:hover, .btn:focus {
@@ -226,7 +228,8 @@ textarea {
     font-weight: 500;
     padding: 24px 0;
     position: relative;
-    transition: color var(--main-tran);
+    transition: var(--main-tran);
+    transition-property: color;
 }
 
 .nav-link:hover,
@@ -261,7 +264,8 @@ textarea {
 
 .contact-link {
     color: rgb(var(--slate));
-    transition: color var(--main-tran);
+    transition: var(--main-tran);
+    transition-property: color;
 }
 
 /* HERO */
@@ -334,7 +338,8 @@ textarea {
 }
 
 .portfolio-item {
-    transition: box-shadow var(--main-tran);
+    transition: var(--main-tran);
+    transition-property: box-shadow;
 }
 
 .portfolio-item:hover {
@@ -359,7 +364,8 @@ textarea {
     height: 100%;
     width: 100%;
     transform: translateY(100%);
-    transition: transform var(--main-tran);
+    transition: var(--main-tran);
+    transition-property: transform;
 }
 
 .portfolio-content {
@@ -452,19 +458,17 @@ textarea {
 }
 
 .modal-overlay {
-    background-color: rgba(var(--black), 50%);
+    background-color: rgba(var(--navy-blue), 40%);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: 99;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     opacity: 0;
     pointer-events: none;
-    transition: opacity var(--main-tran);
+    transition: var(--main-tran);
+    transition-property: opacity;
 }
 
 .modal-overlay.show {
@@ -476,12 +480,17 @@ textarea {
     background-color: rgb(var(--dairy));
     padding: 72px 24px 24px;
     width: 408px;
-    height: 584px;
+    min-height: 584px;
     flex-shrink: 0;
     border-radius: 4px;
     box-shadow: 0 2px 1px 0 rgba(var(--black), 20%), 0 1px 3px 0 rgba(var(--black), 12%), 0 1px 1px 0 rgba(var(--black), 14%);
     overflow: hidden;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: var(--main-tran);
+    transition-property: transform;
 }
 
 .modal-btn {
@@ -491,23 +500,25 @@ textarea {
     cursor: pointer;
     border: 1px solid rgba(var(--black), 10%);
     background-color: rgb(var(--cornflower));
-    width: 23px;
-    height: 23px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: var(--main-tran);
-    transition-property: background-color, border-color;
+    transition-property: background-color, border;
 }
 
 .modal-btn:hover, .modal-btn:focus {
     background-color: rgb(var(--ocean));
-    border-color: transparent;
+    border: none;
 }
 
 .modal-btn-icon {
     fill: rgb(var(--navy-blue));
+    transition: var(--main-tran);
+    transition-property: fill;
 }
 
 .modal-btn:hover .modal-btn-icon, .modal-btn:focus .modal-btn-icon {
@@ -518,6 +529,7 @@ textarea {
     text-align: center;
     color: rgb(var(--navy-blue));
     margin-bottom: 16px;
+    font-weight: 500;
 }
 
 .modal-label-wrapper {
@@ -537,6 +549,8 @@ textarea {
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
+    display: block;
+    margin-bottom: 4px;
 }
 
 .modal-input-wrapper {
@@ -549,6 +563,8 @@ textarea {
     left: 16px;
     transform: translateY(-50%);
     fill: rgb(var(--navy-blue));
+    transition: var(--main-tran);
+    transition-property: fill;
 }
 
 .contact-input {
@@ -557,6 +573,11 @@ textarea {
     width: 100%;
     border-radius: 4px;
     border: 1px solid rgba(var(--navy-blue), 40%);
+    height: 40px;
+    background-color: transparent;
+    outline: transparent;
+    transition: var(--main-tran);
+    transition-property: border-color;
 }
 
 .contact-input:focus {
