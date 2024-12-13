@@ -532,7 +532,7 @@ textarea {
     margin-bottom: 24px;
 }
 
-.contact-label-title {
+.contact-label {
     color: rgb(var(--light-slate));
     font-size: 12px;
     line-height: 1.17;
