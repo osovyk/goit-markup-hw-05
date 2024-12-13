@@ -499,7 +499,7 @@ textarea {
     transition-property: transform;
 }
 
-.modal-btn {
+.modal-close-btn {
     position: absolute;
     top: 24px;
     right: 24px;
@@ -509,25 +509,27 @@ textarea {
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    display: block;
+    display: flex;
     align-items: center;
     justify-content: center;
     transition: var(--main-tran);
     transition-property: background-color, border;
 }
 
-.modal-btn:hover, .modal-btn:focus {
+.modal-close-btn:hover,
+.modal-close-btn:focus {
     background-color: rgb(var(--ocean));
     border: none;
 }
 
-.modal-btn-icon {
+.modal-close-btn-icon {
     fill: rgb(var(--navy-blue));
     transition: var(--main-tran);
     transition-property: fill;
 }
 
-.modal-btn:hover .modal-btn-icon, .modal-btn:focus .modal-btn-icon {
+.modal-close-btn:hover .modal-close-btn-icon,
+.modal-close-btn:focus .modal-close-btn-icon {
     fill: rgb(var(--white));
 }
 
@@ -631,9 +633,9 @@ textarea {
     border-radius: 2px;
     border: 1px solid rgba(var(--navy-blue), 40%);
     cursor: pointer;
-    transition: var(--main-tran);
-    transition-property: background-color, border;
     fill: transparent;
+    transition: var(--main-tran);
+    transition-property: background-color, border, fill;
 }
 
 input[type='checkbox']:checked + .checkbox-text .modal-form-checkbox {
@@ -647,7 +649,7 @@ input[type='checkbox']:checked + .checkbox-text .modal-form-checkbox {
 
 input[type='checkbox']:checked + .checkbox-text .modal-form-checkbox .checkbox-icon {
     opacity: 1;
-    fill: rgb(var(--white));
+    fill: rgb(var(--cloud));
 }
 
 .checkbox-text {
@@ -665,6 +667,11 @@ input[type='checkbox']:checked + .checkbox-text .modal-form-checkbox .checkbox-i
     text-decoration-thickness: auto;
     text-underline-offset: auto;
     text-underline-position: from-font;
+}
+
+.modal-btn {
+    display: block;
+    text-align: center;
 }
 
 
