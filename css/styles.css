@@ -652,6 +652,10 @@ input[type='checkbox']:checked + .checkbox-text .modal-form-checkbox .checkbox-i
     fill: rgb(var(--cloud));
 }
 
+input[type='checkbox']:checked + .checkbox-text .modal-form-checkbox {
+    fill: rgb(var(--cloud));
+}
+
 .checkbox-text {
     color: rgb(var(--light-slate));
     font-size: 12px;
