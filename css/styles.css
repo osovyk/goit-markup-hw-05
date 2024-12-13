@@ -426,6 +426,11 @@ textarea {
     background-color: rgb(var(--green));
 }
 
+.subscribe-form {
+    display: flex;
+    gap: 24px;
+}
+
 .email-input {
     padding: 8px 16px;
     border-radius: 4px;
@@ -437,7 +442,8 @@ textarea {
     flex-shrink: 0;
     color: rgb(var(--white));
     font-size: 12px;
-    margin-right: 16px;
+    line-height: 2;
+    letter-spacing: 0.04em;
 }
 
 .email-input::placeholder {
@@ -445,16 +451,16 @@ textarea {
 }
 
 .subscribe-btn {
-    display: inline-flex;
-    padding: 8px 24px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    gap: 16px;
-    max-height: 40px;
+    height: 40px;
+    min-width: 165px;
 }
 
 .subscribe-icon {
     fill: currentColor;
+    margin-left: 16px;
 }
 
 .modal-overlay {
