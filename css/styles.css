@@ -468,7 +468,7 @@ textarea {
     opacity: 0;
     pointer-events: none;
     transition: var(--main-tran);
-    transition-property: opacity;
+    transition-property: opacity, visibility;
 }
 
 .modal-overlay.show {
