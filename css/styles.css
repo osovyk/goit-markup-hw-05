@@ -509,7 +509,7 @@ textarea {
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
     transition: var(--main-tran);
@@ -628,24 +628,24 @@ textarea {
     align-items: center;
     width: 16px;
     height: 16px;
-    /*margin-right: 12px;*/
     border-radius: 2px;
     border: 1px solid rgba(var(--navy-blue), 40%);
     cursor: pointer;
     transition: var(--main-tran);
-    transition-property: background-color, border-color;
+    transition-property: background-color, border;
+    fill: transparent;
 }
 
-input[type='checkbox']:checked + .modal-form-checkbox {
+input[type='checkbox']:checked + .checkbox-text .modal-form-checkbox {
     background-color: rgb(var(--ocean));
-    border-color: transparent;
+    border: none;
 }
 
 .checkbox-icon {
     opacity: 0;
 }
 
-input[type='checkbox']:checked + .modal-form-checkbox > .checkbox-icon {
+input[type='checkbox']:checked + .checkbox-text .modal-form-checkbox .checkbox-icon {
     opacity: 1;
     fill: rgb(var(--white));
 }
